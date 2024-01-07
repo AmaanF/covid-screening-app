@@ -1,0 +1,36 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "./src/index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon",
+    "start": "NODE_ENV=development node ./src/index.js",
+    "start:prod": "NODE_ENV=production node ./src/index.js",
+    "debug": "NODE_ENV=development DEBUG=express:* node ./src/index.js",
+    "migrate:latest": "knex migrate:latest --knexfile ./src/db/knexfile.js",
+    "migrate:rollback": "knex migrate:rollback --all --knexfile ./src/db/knexfile.js",
+    "seed:make": "knex seed:make dev --knexfile ./src/db/knexfile.js",
+    "seed:run": "knex seed:run dev --knexfile ./src/db/knexfile.js"
+  },
+  "dependencies": {
+    "ajv": "^8.6.3",
+    "ajv-formats": "^2.1.1",
+    "argon2": "^0.28.2",
+    "async-redis": "^2.0.0",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.95.11",
+    "mysql": "^2.18.1",
+    "objection": "^2.2.16",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "axios": "^0.21.4",
+    "nodemon": "^2.0.12"
+  }
+}
